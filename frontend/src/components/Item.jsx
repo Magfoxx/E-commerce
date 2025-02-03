@@ -5,7 +5,7 @@ const Item = ({ product }) => {
   return (
     <div className="bottom-12 relative">
       {/* Image */}
-      <Link className="flexCenter relative top-12 overflow-hidden m-2.5 rounded-xl">
+      <Link className="flexCenter relative top-12 overflow-hidden pb-3 rounded-t-2xl">
         <img src={product.image[0]} alt={product.name} />
       </Link>
       {/* Info */}

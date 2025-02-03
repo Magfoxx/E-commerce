@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // Import de composants
 import Title from "./Title";
 import Item from "./Item";
@@ -7,22 +7,29 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import des styles Swiper
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 // Import des modules requis
 import { Autoplay, Pagination } from "swiper/modules";
-import { products } from "../assets/data";
+// Import
+import { ShopContext } from "../context/ShopContext";
 
 const NewArrivals = () => {
+  const { products } = useContext(ShopContext);
   const [newArrivals, setNewArrivals] = useState([]);
 
   useEffect(() => {
-    if (products?.length) {
-      setNewArrivals(products.slice(0, 10));
-    }
-  }, []);
+    const data = products.slice(0, 10)
+    setNewArrivals(data)
+  }, [products]);
 
   return (
     <section className="max-padd-container pt-16 pb-6 bg-primary">
-      <Title title1={"Dernières"} title2={"Nouveautés"} titleStyles={"pb-10"} paraStyles={"!block"}/>
+      <Title
+        title1={"Dernières"}
+        title2={"Nouveautés"}
+        titleStyles={"pb-10"}
+        paraStyles={"!block"}
+      />
       {/* Swiper Container */}
       <Swiper
         autoplay={{
