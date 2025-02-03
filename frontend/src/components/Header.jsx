@@ -57,7 +57,7 @@ const Header = () => {
                 </div>
               ) : (
                 <button className="btn-light flexCenter gap-x-2">
-                  Login
+                  Connexion
                   <RiUserLine className="text-xl" />
                 </button>
               )}
