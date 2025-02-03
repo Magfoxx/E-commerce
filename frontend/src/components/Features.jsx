@@ -29,15 +29,15 @@ const Features = () => {
         <div className="flexCenter flex-wrap sm:flex-nowrap gap-x-5">
           <div className="p-4 rounded-3xl">
             <h4 className="h4 capitalize">Produit de Qualité</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>Des articles soigneusement sélectionnés, conçus avec des matériaux durables et un savoir-faire exceptionnel pour garantir votre satisfaction.</p>
           </div>
           <div className="p-4 rounded-3xl">
             <h4 className="h4 capitalize">Livraison rapide</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>Recevez vos commandes en un temps record grâce à notre service de livraison efficace et fiable, partout où vous êtes.</p>
           </div>
           <div className="p-4 rounded-3xl">
             <h4 className="h4 capitalize">Payement Sécurisé</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>Effectuez vos achats en toute tranquillité avec notre système de paiement sécurisé, protégeant vos données à chaque transaction.</p>
           </div>
         </div>
       </div>
