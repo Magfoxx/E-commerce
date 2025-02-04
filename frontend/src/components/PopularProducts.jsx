@@ -17,12 +17,17 @@ const PopularProducts = () => {
       <Title
         title1={"Produits"}
         title2={"Populaires"}
-        titleStyles={"pb-10"}
+        titleStyles={"pb-5"}
         paraStyles={"!block"}
       />
+      <p className="pb-10">
+        Découvrez les meilleures offres sur des produits haut <br /> de gamme,
+        conçus pour améliorer votre quotidien.
+      </p>
+
       {/* Container */}
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        {popularProducts.map(product => (
+        {popularProducts.map((product) => (
           <div key={product._id}>
             <Item product={product} />
           </div>
