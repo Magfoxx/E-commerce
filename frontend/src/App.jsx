@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import Testimonials from "./pages/Testimonials";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/testimonials" element={<Testimonials />} />
       </Routes>
+      <Footer />
     </main>
   );
 };
