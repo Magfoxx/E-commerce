@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { FaBarsStaggered, FaRegCircleUser } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { TbBasket, TbUserCircle } from "react-icons/tb";
 import { RiUserLine } from "react-icons/ri";
+import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
-  const [token, setToken] = useState("");
+  const {token} = useContext(ShopContext)
   const [menuOpened, setMenuOpened] = useState(false);
+  
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
@@ -33,7 +35,7 @@ const Header = () => {
         </div>
 
         {/* Boutton coté droit */}
-        <div className="flex-1 flex items-center justify-end gap-x-7 xs:gap-x-8">
+        <div className="flex-1 flex items-center justify-end gap-x-2 xs:gap-x-8">
           {/* menu toggle */}
           <FaBarsStaggered
             onClick={toggleMenu}
