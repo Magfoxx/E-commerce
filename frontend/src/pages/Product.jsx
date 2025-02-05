@@ -79,7 +79,7 @@ const Product = () => {
               {currency}
               {product.price}.00
             </h4>
-            <p className="max-w-96">{product.description}</p>
+            <p className="max-w-[444px]">{product.description}</p>
             <div className="flex flex-col gap-4 my-4 mb-5">
               <div className="flex gap-2">
                 {[...product.sizes]
@@ -102,8 +102,10 @@ const Product = () => {
               </div>
             </div>
             <div className="flex items-center gap-x-4">
-              <button className="btn-secondary
-               !rounded-lg w-1/2 flexCenter  gap-x-2 capitalize">
+              <button
+                className="btn-secondary
+               !rounded-lg w-1/2 flexCenter  gap-x-2 capitalize"
+              >
                 Ajouter au panier <TbShoppingBagPlus />
               </button>
               <button className="btn-light !rounded-lg !py-3.5">
@@ -112,7 +114,9 @@ const Product = () => {
             </div>
             <div className="flex items-center gap-x-2 mt-3">
               <FaTruckFast className="text-lg" />
-              <span className="medium-14">livraison gratuite pour les commandes de plus de 500€</span>
+              <span className="medium-14">
+                livraison gratuite pour les commandes de plus de 500€
+              </span>
             </div>
             <hr className="my-3 w-2/3" />
             <div className="mt-2 flex flex-col gap-1 text-gray-30 text-xs">

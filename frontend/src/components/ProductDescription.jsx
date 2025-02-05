@@ -1,16 +1,12 @@
 const ProductDescription = () => {
   return (
-    <div className="ring-1 ring-slate-900/10 rounded-lg">
+    <section className="ring-1 ring-slate-900/10 rounded-lg">
       <div className="flex gap-3">
-        <button className="medium-14 p-3 w-32 border-b-2 border-secondary" l>
+        <button className="medium-14 p-3 w-32 border-b-3 border-secondary">
           Description
         </button>
-        <button className="medium-14 p-3 w-32 border-b-2" l>
-          Guide de soins
-        </button>
-        <button className="medium-14 p-3 w-32 border-b-2" l>
-          Guide des tailles
-        </button>
+        <button className="medium-14 p-3 w-32">Guide de soins</button>
+        <button className="medium-14 p-3 w-32">Guide des tailles</button>
       </div>
       <hr className="h-[1px] w-full" />
       <div className="flex flex-col gap-3 p-3">
@@ -46,7 +42,7 @@ const ProductDescription = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
