@@ -35,9 +35,9 @@ const Product = () => {
 
   return (
     <div>
-      <div className="max-padd-container mt-3">
+      <div className="max-padd-container">
         {/* Données produit */}
-        <div className="flex gap-12 flex-col xl:flex-row bg-white pb-16 rounded-2xl">
+        <div className="flex gap-12 flex-col xl:flex-row bg-primary rounded-2xl p-3 mb-6">
           {/* Image produit */}
           <div className="flex flex-1 gap-x-2 xl:flex-1">
             <div className="flexCenter flex-col gap-[7px] flex-wrap">
@@ -89,6 +89,7 @@ const Product = () => {
                   })
                   .map((item, i) => (
                     <button
+                      key={i}
                       onClick={() => setSize(item)}
                       className={`${
                         item === size
@@ -104,7 +105,7 @@ const Product = () => {
             <div className="flex items-center gap-x-4">
               <button
                 className="btn-secondary
-               !rounded-lg w-1/2 flexCenter  gap-x-2 capitalize"
+               !rounded-lg sm:w-1/2 flexCenter gap-x-2 capitalize"
               >
                 Ajouter au panier <TbShoppingBagPlus />
               </button>
@@ -119,7 +120,7 @@ const Product = () => {
               </span>
             </div>
             <hr className="my-3 w-2/3" />
-            <div className="mt-2 flex flex-col gap-1 text-gray-30 text-xs">
+            <div className="mt-2 flex flex-col gap-1 text-gray-30 text-[14px]">
               <div>Une authenticité à laquelle vous pouvez faire confiance</div>
               <div>Profitez du Paiement à la Livraison pour Votre Confort.</div>
               <div>Retour et Échange Faciles Sous 7 Jours</div>
@@ -128,7 +129,10 @@ const Product = () => {
         </div>
         <ProductDescription />
         <ProductFeatures />
-        <RelatedProducts />
+        <RelatedProducts
+          category={product.category}
+          subCategory={product.subCategory}
+        />
       </div>
 
       <Footer />

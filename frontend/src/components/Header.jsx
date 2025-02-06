@@ -8,9 +8,9 @@ import { RiUserLine } from "react-icons/ri";
 import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
-  const {token} = useContext(ShopContext)
+  const { token } = useContext(ShopContext);
   const [menuOpened, setMenuOpened] = useState(false);
-  
+
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
@@ -35,7 +35,7 @@ const Header = () => {
         </div>
 
         {/* Boutton coté droit */}
-        <div className="flex-1 flex items-center justify-end gap-x-2 xs:gap-x-8">
+        <div className="flex-1 flex items-center justify-end gap-x-2 sm:gap-x-4 md:gap-x-8 lg:gap-x-10">
           {/* menu toggle */}
           <FaBarsStaggered
             onClick={toggleMenu}
@@ -58,7 +58,7 @@ const Header = () => {
                   <TbUserCircle className="text-[29px] cursor-pointer" />
                 </div>
               ) : (
-                <button className="btn-light flexCenter gap-x-2">
+                <button className="btn-light flexCenter gap-x-2 !p-2">
                   Connexion
                   <RiUserLine className="text-xl" />
                 </button>
