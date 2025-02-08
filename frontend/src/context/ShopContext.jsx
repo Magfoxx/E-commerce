@@ -55,9 +55,30 @@ const ShopContextProvider = (props) => {
     return totalCount;
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+  // Mise à jour de la quantité
+  const updateQuantity = async (itemId, size, quantity) => {
+    let cartData = structuredClone(cartItems);
+    cartData[itemId][size] = quantity;
+    setCartItems(cartData);
+  };
+
+  // Obtenir le montant total du panier
+  const getCartAmount = () => {
+    let totalAmount = 0;
+    for (const items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items);
+      for (const item in cartItems[items]) {
+        try {
+          if (cartItems[items][item] > 0) {
+            totalAmount += itemInfo.price * cartItems[items][item];
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }
+    return totalAmount;
+  };
 
   const value = {
     currency,
@@ -72,6 +93,10 @@ const ShopContextProvider = (props) => {
     setShowSearch,
     addToCart,
     getCartCount,
+    cartItems,
+    setCartItems,
+    updateQuantity,
+    getCartAmount,
   };
 
   return (

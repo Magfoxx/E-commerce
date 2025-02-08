@@ -6,6 +6,7 @@ import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import Testimonials from "./pages/Testimonials";
 import Cart from "./pages/Cart";
+import PlaceOrder from "./pages/PlaceOrder";
 import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
       </Routes>
       {/* <Footer /> */}
     </main>
