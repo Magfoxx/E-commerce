@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import ShowSearch from "../components/ShowSearch";
 import { ShopContext } from "../context/ShopContext";
 import Item from "../components/Item";
-import Footer from "../components/Footer";
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -170,7 +169,6 @@ const Collection = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -59,80 +59,81 @@ const Cart = () => {
   const productLabel = cartCount > 1 ? " produits" : " produit";
 
   return (
-    <div>
-      <div className="bg-primary mb-16">
-        <div className="max-padd-container py-10">
-          {/* Titre */}
-          <div className="flexStart gap-x-4">
-            <Title title1={"Votre"} title2={"Panier"} titleStyles={"h3"} />
-            <h5 className="medium-15 text-gray-30 relative bottom-3.5">
-              ({getCartCount()}
-              {productLabel})
-            </h5>
-          </div>
-          {/* Container */}
-          <div className="mt-6">
-            {cartData.map((item, i) => {
-              const productData = products.find(
-                (product) => product._id === item._id
-              );
-              const key = `${item._id} - ${item.size}`;
+    <div className="bg-primary mb-16">
+      <div className="max-padd-container py-10">
+        {/* Titre */}
+        <div className="flexStart gap-x-4">
+          <Title title1={"Votre"} title2={"Panier"} titleStyles={"h3"} />
+          <h5 className="medium-15 text-gray-30 relative bottom-3.5">
+            ({getCartCount()}
+            {productLabel})
+          </h5>
+        </div>
+        {/* Container */}
+        <div className="mt-6">
+          {cartData.map((item, i) => {
+            const productData = products.find(
+              (product) => product._id === item._id
+            );
+            const key = `${item._id} - ${item.size}`;
 
-              return (
-                <div className="rounded-lg bg-white p-2 mb-3" key={i}>
-                  <div className="flex items-center gap-x-3">
-                    <div className="flex items-start gap-6">
-                      <img
-                        src={productData.image[0]}
-                        alt={productData.name}
-                        className="w-16 sm:w-18 rounded"
+            return (
+              <div className="rounded-lg bg-white p-2 mb-3" key={i}>
+                <div className="flex items-center gap-x-3">
+                  <div className="flex items-start gap-6">
+                    <img
+                      src={productData.image[0]}
+                      alt={productData.name}
+                      className="w-16 sm:w-18 rounded"
+                    />
+                  </div>
+                  <div className="flex flex-col w-full">
+                    <div className="flexBetween">
+                      <h5 className="h5 !my-0 line-clamp-1">
+                        {productData.name}
+                      </h5>
+                      <FaRegWindowClose
+                        onClick={() => updateQuantity(item._id, item.size, 0)}
+                        className="cursor-pointer text-secondary"
                       />
                     </div>
-                    <div className="flex flex-col w-full">
-                      <div className="flexBetween">
-                        <h5 className="h5 !my-0 line-clamp-1">
-                          {productData.name}
-                        </h5>
-                        <FaRegWindowClose
-                          onClick={() => updateQuantity(item._id, item.size, 0)}
-                          className="cursor-pointer text-secondary"
-                        />
+                    <p className="bold-14 my-0.5">{item.size}</p>
+                    <div className="flexBetween">
+                      <div className="flex items-center ring-1 ring-slate-900/5 rounded-full overflow-hidden bg-primary">
+                        <button
+                          onClick={() => decrement(item._id, item.size)}
+                          className="p-1.5 bg-white text-secondary rounded-full shadow-md"
+                        >
+                          <FaMinus className="text-xs" />
+                        </button>
+                        <p className="px-2">{quantities[key]}</p>
+                        <button
+                          onClick={() => increment(item._id, item.size)}
+                          className="p-1.5 bg-white text-secondary rounded-full shadow-md"
+                        >
+                          <FaPlus className="text-xs" />
+                        </button>
                       </div>
-                      <p className="bold-14 my-0.5">{item.size}</p>
-                      <div className="flexBetween">
-                        <div className="flex items-center ring-1 ring-slate-900/5 rounded-full overflow-hidden bg-primary">
-                          <button
-                            onClick={() => decrement(item._id, item.size)}
-                            className="p-1.5 bg-white text-secondary rounded-full shadow-md"
-                          >
-                            <FaMinus className="text-xs" />
-                          </button>
-                          <p className="px-2">{quantities[key]}</p>
-                          <button
-                            onClick={() => increment(item._id, item.size)}
-                            className="p-1.5 bg-white text-secondary rounded-full shadow-md"
-                          >
-                            <FaPlus className="text-xs" />
-                          </button>
-                        </div>
-                        <h4 className="h4">
-                          {currency}
-                          {productData.price}
-                        </h4>
-                      </div>
+                      <h4 className="h4">
+                        {currency}
+                        {productData.price}
+                      </h4>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-          <div className="flex my-20">
-            <div className="w-full sm:w-[445px]">
-              <CartTotal />
-              <button 
-                onClick={() => navigate('/place-order')}
-                className="btn-secondary mt-7">Procéder au paiement</button>
-            </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex my-20">
+          <div className="w-full sm:w-[445px]">
+            <CartTotal />
+            <button
+              onClick={() => navigate("/place-order")}
+              className="btn-secondary mt-7"
+            >
+              Passer la commande
+            </button>
           </div>
         </div>
       </div>

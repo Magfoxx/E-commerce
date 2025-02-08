@@ -7,7 +7,7 @@ const CartTotal = () => {
 
   return (
     <section className="w-full">
-      <Title title1={"Panier"} title2={"Total"} titleStyles={"h3"} />
+      <Title title1={"Votre"} title2={"Panier"} titleStyles={"h3"} />
       <div className="flexBetween pt-3">
         <h5 className="h5">Total :</h5>
         <p className="h5">
