@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log
+.log
+log.txt
+logs/
+
+# Environnement
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Cache & OS
+.DS_Store
+Thumbs.db
+.cache/
+.vscode/
+*.swp
+*.swo
+
+# Build & Dépendances
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Sauvegardes & IDE
+.idea/
+*.iml
+*.sublime-workspace
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Babel & ESLint
+.eslintcache
+.nyc_output/
+coverage/
