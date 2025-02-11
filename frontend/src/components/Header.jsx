@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { FaBarsStaggered, FaRegCircleUser } from "react-icons/fa6";
@@ -8,13 +8,17 @@ import { RiUserLine } from "react-icons/ri";
 import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
-  const { token, getCartCount } = useContext(ShopContext);
+  const { token, getCartCount, navigate } = useContext(ShopContext);
   const [menuOpened, setMenuOpened] = useState(false);
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
+  const logout = () => {
+
+  }
+
   return (
-    <header className="max-padd-container w-full z-50">
+    <header className="max-padd-container w-full">
       <div className="flexBetween py-3">
         {/* Logo coté gauche */}
         <Link to={"/"} className="flex flex-1">
@@ -58,12 +62,22 @@ const Header = () => {
                   <TbUserCircle className="text-[29px] cursor-pointer" />
                 </div>
               ) : (
-                <button className="btn-light flexCenter gap-x-2 !p-2">
+                <button
+                  onClick={() => navigate("/login")}
+                  className="btn-light flexCenter gap-x-2 !p-2"
+                >
                   Connexion
                   <RiUserLine className="text-xl" />
                 </button>
               )}
             </div>
+            {/* Listes déroulantes */}
+            {token && (
+              <ul className="bg-white p-2 w-32 ring-1 ring-slate-900/5 rounded absolute right-0 top-7 hidden group-hover:flex flex-col regular-14 shadow-md z-50">
+                <li onClick={() => navigate('/orders')} className="p-2 text-tertiary rounded-md hover:bg-primary cursor-pointer">Commandes</li>
+                <li onClick={logout} className="p-2 text-tertiary rounded-md hover:bg-primary cursor-pointer">Déconnexion</li>
+              </ul>
+            )}
           </div>
         </div>
       </div>

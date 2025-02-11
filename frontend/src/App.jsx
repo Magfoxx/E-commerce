@@ -7,9 +7,10 @@ import Product from "./pages/Product";
 import Testimonials from "./pages/Testimonials";
 import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
+import Orders from "./pages/Orders";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -22,8 +23,9 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
     </main>
