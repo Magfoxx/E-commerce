@@ -62,7 +62,7 @@ const Product = () => {
           {/* Note et prix */}
           <div className="flex items-baseline gap-x-5">
             <div className="flex items-center gap-x-2 text-secondary">
-              <div className="flex gap-x-2 text-secondary">
+              <div className="flex gap-x-2 text-yellow-500">
                 <FaStar />
                 <FaStar />
                 <FaStar />
