@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "license": "ISC",
+  "author": "Magfoxx",
+  "description": "Frontend du site Outfiro",
   "dependencies": {
     "@tailwindcss/vite": "^4.0.1",
     "react": "^18.3.1",
