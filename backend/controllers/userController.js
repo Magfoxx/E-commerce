@@ -8,7 +8,7 @@ const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET)
 };
 
-// Fonction du contrôleur pour la connexion de l'utilisateur
+// Fonction qui contrôle la connexion de l'utilisateur
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body
@@ -32,7 +32,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-// Fonction du contrôleur pour l'enregistrement de l'utilisateur
+// Fonction qui contrôle l'enregistrement de l'utilisateur
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -79,7 +79,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
-// Fonction du contrôleur pour la connexion de l'admin
+// Fonction qui contrôle la connexion de l'admin
 export const adminLogin = async (req, res) => {
 
 };
