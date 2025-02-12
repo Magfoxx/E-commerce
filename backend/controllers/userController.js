@@ -10,7 +10,26 @@ const createToken = (id) => {
 
 // Fonction du contrôleur pour la connexion de l'utilisateur
 export const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body
 
+    const user = await userModel.findOne({ email })
+
+    if (!user) {
+      return res.json({ success: false, message: "L'utilisateur n'existe pas !" })
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password)
+    if (isMatch) {
+      const token = createToken(user._id)
+      res.json({ success: true, token })
+    } else {
+      res.json({ success: false, message: "Informations d'identification invalides" })
+    }
+  } catch (error) {
+    console.log(error)
+    res.json({ success: false, message: error.message })
+  }
 };
 
 // Fonction du contrôleur pour l'enregistrement de l'utilisateur
