@@ -52,22 +52,42 @@ const addProduct = async (req, res) => {
     console.log(error)
     res.json({ success: false, message: error.message })
   }
-
 }
 
 // fonction qui contrôle la suppréssion d'un produit
 const removeProduct = async (req, res) => {
+  try {
+    await productModel.findByIdAndDelete(req.body.id)
+    res.json({ success: true, message: "Produit supprimé" })
 
+  } catch (error) {
+    console.log(error)
+    res.json({ success: false, message: error.message })
+  }
 }
 
 // fonction qui contrôle les détails d'un seul produit
 const singleProduct = async (req, res) => {
-
+  try {
+    const { productId } = req.body
+    const product = await productModel.findById(productId)
+    res.json({ success: true, product })
+  } catch (error) {
+    console.log(error)
+    res.json({ success: false, message: error.message })
+  }
 }
 
 // Fonction qui contrôle la liste produit
 const listProduct = async (req, res) => {
+  try {
+    const products = await productModel.find({})
+    res.json({ success: true, products })
 
+  } catch (error) {
+    console.log(error)
+    res.json({ success: false, message: error.message })
+  }
 }
 
 export { addProduct, removeProduct, singleProduct, listProduct }
