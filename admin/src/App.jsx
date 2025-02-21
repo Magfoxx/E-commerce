@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./components/Sidebar";
@@ -8,8 +8,17 @@ import List from "./pages/List";
 import Orders from "./pages/Orders";
 import Login from "./components/Login";
 
+export const backend_url = import.meta.env.VITE_BACKEND_URL;
+export const currency = "€";
+
 const App = () => {
-  const [token, setToken] = useState("dummyToken");
+  const [token, setToken] = useState(
+    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+  );
+
+  useEffect(() => {
+    localStorage.setItem("token", token);
+  }, [token]);
 
   return (
     <main>
