@@ -4,7 +4,7 @@ import { MdFactCheck } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { FaListAlt } from "react-icons/fa";
 
-const Sidebar = ({setToken}) => {
+const Sidebar = ({ setToken }) => {
   return (
     <div className="max-sm:flexCenter max-xs:pb-3 rounded bg-white pb-3 sm:w-1/5 sm:min-h-screen">
       <div className="flex flex-col gap-y-6 max-sm:items-center sm:flex-col pt-4 sm:pt-14">
@@ -22,7 +22,7 @@ const Sidebar = ({setToken}) => {
             }
           >
             <FaSquarePlus />
-            <div className="hidden lg:flex">Add Item</div>
+            <div className="hidden lg:flex">Ajouter article</div>
           </NavLink>
           <NavLink
             to={"/link"}
@@ -33,7 +33,7 @@ const Sidebar = ({setToken}) => {
             }
           >
             <FaListAlt />
-            <div className="hidden lg:flex">Add List</div>
+            <div className="hidden lg:flex">Ajouter liste</div>
           </NavLink>
           <NavLink
             to={"/orders"}
@@ -44,7 +44,7 @@ const Sidebar = ({setToken}) => {
             }
           >
             <MdFactCheck />
-            <div className="hidden lg:flex">Add Orders</div>
+            <div className="hidden lg:flex">Ajouter commandes</div>
           </NavLink>
           <div className="max-sm:ml-5 sm:mt-72">
             <button
