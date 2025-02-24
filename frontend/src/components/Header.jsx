@@ -8,13 +8,15 @@ import { RiUserLine } from "react-icons/ri";
 import { ShopContext } from "../context/ShopContext";
 
 const Header = () => {
-  const { token, getCartCount, navigate } = useContext(ShopContext);
+  const { token, setToken, getCartCount, navigate } = useContext(ShopContext);
   const [menuOpened, setMenuOpened] = useState(false);
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   const logout = () => {
-
+    localStorage.removeItem("token");
+    setToken('')
+    navigate("/login")
   }
 
   return (
