@@ -25,7 +25,7 @@ const Sidebar = ({ setToken }) => {
             <div className="hidden lg:flex">Ajouter article</div>
           </NavLink>
           <NavLink
-            to={"/link"}
+            to={"/list"}
             className={({ isActive }) =>
               isActive
                 ? "active-link"
