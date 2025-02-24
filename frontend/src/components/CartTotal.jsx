@@ -11,13 +11,13 @@ const CartTotal = () => {
       <div className="flexBetween pt-3">
         <h5 className="h5">Total :</h5>
         <p className="h5">
-          {getCartAmount()}.00 {currency}
+          {getCartAmount()} {currency}
         </p>
       </div>
       <hr className="mx-auto h-[1px] w-full bg-gray-900/10 my-1" />
       <div className="flexBetween pt-3">
         <h5 className="h5">Frais d'expédition :</h5>
-        <p className="h5">{getCartAmount() === 0 ? "0,00" : `${delivery_charges}.00 ${currency}`}</p>
+        <p className="h5">{getCartAmount() === 0 ? "0,00" : `${delivery_charges} ${currency}`}</p>
       </div>
       <hr className="mx-auto h-[1px] w-full bg-gray-900/10 my-1" />
       <div className="flexBetween pt-3">

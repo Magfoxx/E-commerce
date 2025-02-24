@@ -12,7 +12,7 @@ const Item = ({ product }) => {
       <div className="p-3 rounded-lg pt-12 bg-white shadow-lg border border-gray-200">
         <h4 className="bold-15 line-clamp-1 !my-0">{product.name}</h4>
         <div className="flexBetween pt-1">
-          <h5 className="h5 pr-2">{product.price}.00 €</h5>
+          <h5 className="h5 pr-2">{product.price} €</h5>
           <div className="flex items-baseline gap-x-1">
             <FaStar className="text-yellow-500" />
             <h5 className="h5 relative bottom-0.5">4.8</h5>
